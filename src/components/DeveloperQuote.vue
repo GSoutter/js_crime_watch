@@ -3,7 +3,7 @@
 
     <p>Developer Quote:</p>
     <p>"{{developerQuote}}"</p>
-    <p>{{author}}</p>
+    <p id= "author-quote">{{author}}</p>
   </div>
 </template>
 
@@ -37,7 +37,18 @@ div {
   float: right;
   width: 200px;
   border: solid;
-  padding: 4px;
+  padding: 0px 4px 0px 4px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+  Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
+p {
+  padding: -10px 0px 0px 0px;
+  margin: 2px 0px 0px 0px;
+
+}
+
+#author-quote {
+  text-align: right
+}
 </style>
