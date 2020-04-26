@@ -13,7 +13,8 @@ export default {
   data() {
     return {
       developerQuote: '',
-      author: ''
+      author: '',
+
     }
   },
   mounted() {
@@ -38,6 +39,8 @@ div {
   width: 200px;
   border: solid;
   padding: 0px 4px 0px 4px;
+  margin: 4px 4px 4px 4px;
+
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
   Helvetica, Arial, "Lucida Grande", sans-serif;
 }
@@ -45,6 +48,8 @@ div {
 p {
   padding: -10px 0px 0px 0px;
   margin: 2px 0px 0px 0px;
+  margin: 4px 4px 4px 4px;
+
 
 }
 
