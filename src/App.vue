@@ -2,25 +2,35 @@
 <template lang="html">
   <div>
     <h1>Crime Watch</h1>
+    <developer-quote></developer-quote>
 
-
+    <p>Please enter you desired location to search, default is camden market. <a href="https://gridreferencefinder.com/">Grid Reference Finder</a> can be used to find this</p>
+    <p>Data uses police data api, note crime data for scotland is limited as only the transport police feed into the database.</p>
+    <p>Click on a catgory to see a list of the crimes and their locations</p>
     <data-select
     :searchDate="this.searchDate"
     :searchLat="this.searchLat"
     :searchLon="this.searchLon"
     ></data-select>
 
+
     <crime-chart
     :crimeDataArr="this.crimeDataArr"
     ></crime-chart>
-    <developer-quote></developer-quote>
+
+    <crime-map-cat
+    v-if="this.selectedCrimesArray"
+    :selectedCrimesArray="this.selectedCrimesArray"
+    ></crime-map-cat>
+
 
     <br>
     <crime-cat-list
     :crimeData="this.crimeDataArr"
     ></crime-cat-list>
 
-    <crime-cat-detail v-if="this.selectedCrimesArray"
+    <crime-cat-detail
+    v-if="this.selectedCrimesArray"
     :selectedCrimesArray="this.selectedCrimesArray"
     ></crime-cat-detail>
 
@@ -33,6 +43,7 @@ import CrimeCatList from './components/CrimeCatList.vue'
 import CrimeCatDetail from './components/CrimeCatDetail.vue'
 import DataSelect from './components/DataSelect.vue'
 import CrimeChart from './components/CrimeChart.vue'
+import CrimeMapCat from './components/CrimeMapCat.vue'
 import {eventBus} from "./main.js"
 
 
@@ -97,7 +108,8 @@ export default {
     'crime-cat-list': CrimeCatList,
     'crime-cat-detail': CrimeCatDetail,
     'data-select': DataSelect,
-    'crime-chart': CrimeChart
+    'crime-chart': CrimeChart,
+    'crime-map-cat': CrimeMapCat,
   }
 }
 </script>
