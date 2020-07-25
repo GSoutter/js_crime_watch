@@ -17,7 +17,7 @@ export default {
     return {
       chartOptions: {
           'title': 'Crime',
-          'subtitle': 'Sales, Expenses, and Profit: 2014-2017',
+
           'width': 750,
           'height': 450,
       }
@@ -29,7 +29,9 @@ export default {
   },
   computed: {
     chartData: function() {
+      //checks if the crime data array is present.
       if (this.crimeDataArr) {
+        //formats data for display with google charts show crime type and entry count.
         const chartData = [['Crime', 'Counts']]
         for (let array of this.crimeDataArr) {
           chartData.push([array[0].category, array.length])

@@ -78,10 +78,12 @@ export default {
 
   methods: {
     fetchData: function(){
+      //fetching data from police data API
       fetch(`https://data.police.uk/api/crimes-street/all-crime?lat=${this.searchLat}&lng=${this.searchLon}&date=${this.searchDate}`)
       .then(res => res.json())
       .then(data => {
 
+        //creating an object from the data to sort into groups
         const crimeDataObject = {}
         for (let entry of data) {
           // check if category is within object, if not new array created
