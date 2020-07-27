@@ -3,7 +3,7 @@
 
     <form v-on:submit.prevent="emitSelection">
 
-      <label for="time-from">Time From</label>
+      <label for="time-from">Month</label>
        <input type="month" name="time-from" v-model="dataSelect.date">
       <label for="search-lat">Latitude</label>
        <input type="number" step='any' name="search-late" v-model="dataSelect.lat">

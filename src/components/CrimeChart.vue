@@ -1,10 +1,14 @@
 <template lang="html">
   <div>
-    <GChart
-      type="BarChart"
-      :data="chartData"
-      :options="chartOptions"
-    />
+    <div id="chart-border">
+      <GChart
+        type="BarChart"
+        :data="chartData"
+        :options="chartOptions"
+      />
+
+    </div>
+
   </div>
 </template>
 
@@ -16,7 +20,7 @@ export default {
   data(){
     return {
       chartOptions: {
-          'title': 'Crime',
+          'title': 'Crime Logs by Category',
 
           'width': 750,
           'height': 450,
@@ -44,14 +48,13 @@ export default {
 </script>
 
 <style lang="css" scoped>
-div {
-  float: left;
-  /* width: 200px; */
-  border: solid;
-  /* padding: 0px 4px 0px 4px;
-  margin: 4px 4px 4px 4px; */
 
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
-  Helvetica, Arial, "Lucida Grande", sans-serif;
+
+
+#chart-border {
+    border: solid;
+
 }
+
+
 </style>

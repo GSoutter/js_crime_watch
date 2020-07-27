@@ -1,6 +1,6 @@
 <template lang="html">
   <div>
-    <h3>{{selectedCrimesArray[0].category}}</h3>
+    <h2>{{selectedCrimesArray[0].category}}</h2>
     <table>
 
       <tr><th>Location</th><th>Outcome</th><th>Date</th></tr>
@@ -27,11 +27,16 @@ export default {
 div {
   float: left;
   /* width: 200px; */
-  border: solid;
+  /* border: solid; */
   padding: 0px 4px 0px 4px;
   margin: 4px 4px 4px 4px;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
   Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+table {
+    border: solid;
+
 }
 
 </style>

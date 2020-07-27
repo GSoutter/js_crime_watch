@@ -51,9 +51,13 @@ export default {
       L.tileLayer(this.url, {attribution: this.attribution}).addTo(this.map);
 
       for (let crime of crimeArray) {
+        const crimeCat = ""
+        if (crime.outcome_status) {
+          crimeCat = crime.outcome_status.category
+        }
         this.addMarker([crime.location.latitude,
            crime.location.longitude],
-           crime.outcome_status);
+           crimeCat);
       }
     },
   }
@@ -62,8 +66,9 @@ export default {
 
 <style lang="css" scoped>
 #map {
-	width:50vw;
-	height:40vh;
+	border-style: solid;
+  /* padding: 0px 4px 0px 4px;
+  margin: 4px 4px 4px 4px; */
 }
 @import "~leaflet/dist/leaflet.css";
 </style>
